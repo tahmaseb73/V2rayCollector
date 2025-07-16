@@ -1,0 +1,29 @@
+name: Update V2ray Configs
+
+on:
+  schedule:
+    - cron: '0 */8 * * *' # هر ۸ ساعت
+  workflow_dispatch: # امکان اجرای دستی
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: '1.22.0'
+    - name: Install dependencies
+      run: go mod download
+    - name: Run V2rayCollector
+      run: go run main.go
+    - name: Commit changes
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add config/*.txt README.md
+        git commit -m "Update configs and README - $(date -u)"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
