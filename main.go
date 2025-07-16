@@ -3,7 +3,7 @@ package main
 import (
     "flag"
     "time"
-    "github.com/mrvcoder/V2rayCollector/collector"
+    "github.com/tahmaseb73/V2rayCollector/collector"
     "github.com/jszwec/csvutil"
     "github.com/projectdiscovery/gologger"
     "github.com/projectdiscovery/gologger/levels"
