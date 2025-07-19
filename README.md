@@ -2,7 +2,7 @@
 
 This project crawls V2Ray, Hysteria2, TUIC, and WireGuard configs from Telegram channels.
 
-**Last Updated:** Fri, 18 Jul 2025 16:36:38 UTC
+**Last Updated:** Sat, 19 Jul 2025 02:06:38 UTC
 
 ## Available Configs
 - Shadowsocks: [config/ss_iran.txt](config/ss_iran.txt)
